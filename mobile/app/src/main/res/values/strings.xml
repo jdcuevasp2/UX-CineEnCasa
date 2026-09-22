@@ -17,4 +17,11 @@
     <string name="cartelera_subtitle">En cines ahora. Crea una alarma y te avisamos cuando llegue a streaming.</string>
     <string name="cartelera_search_label">Buscar</string>
     <string name="content_description_account">Cuenta</string>
+
+    <!-- M-04 Detalle -->
+    <string name="detalle_title">Detalle</string>
+    <string name="detalle_meta_format">%1$s · %2$d · %3$s</string>
+    <string name="detalle_create_alarm">CREAR ALARMA</string>
+    <string name="detalle_alarm_note">Te avisaremos 1 semana, 1 día y 1 hora antes de su estreno en streaming.</string>
+    <string name="content_description_back">Volver</string>
 </resources>
