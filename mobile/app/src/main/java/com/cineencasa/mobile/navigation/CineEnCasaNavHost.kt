@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.cineencasa.mobile.data.MockMovies
 import com.cineencasa.mobile.ui.screens.cartelera.CarteleraScreen
+import com.cineencasa.mobile.ui.screens.confirmacion.ConfirmacionScreen
 import com.cineencasa.mobile.ui.screens.detalle.DetalleScreen
 import com.cineencasa.mobile.ui.screens.login.LoginScreen
 
@@ -42,7 +43,27 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
                 DetalleScreen(
                     movie = movie,
                     onBackClick = { navController.popBackStack() },
-                    onCrearAlarmaClick = { /* TODO(PR3): navegar a Confirmación cuando exista la ruta */ }
+                    onCrearAlarmaClick = {
+                        navController.navigate(Routes.Confirmacion.createRoute(movie.id))
+                    }
+                )
+            }
+        }
+        composable(
+            route = Routes.Confirmacion.route,
+            arguments = listOf(navArgument(Routes.Confirmacion.ARG_MOVIE_ID) { type = NavType.IntType })
+        ) { backStackEntry ->
+            val movieId = backStackEntry.arguments?.getInt(Routes.Confirmacion.ARG_MOVIE_ID)
+            val movie = MockMovies.findById(movieId ?: -1)
+            if (movie != null) {
+                ConfirmacionScreen(
+                    movieTitle = movie.title,
+                    onVolverClick = {
+                        navController.navigate(Routes.Cartelera.route) {
+                            popUpTo(Routes.Cartelera.route) { inclusive = false }
+                            launchSingleTop = true
+                        }
+                    }
                 )
             }
         }
