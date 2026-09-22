@@ -17,4 +17,10 @@ document.addEventListener('DOMContentLoaded', function(){
     catch(err){ console.warn('No se pudo borrar la sesión de localStorage', err); }
     window.location.href = 'index.html';
   });
+
+  const noBtn = document.getElementById('noBtn');
+  noBtn.addEventListener('click', function(){
+    window.location.href = 'calendar.html?logged=1';
+  });
+  // "SÍ, CANCELAR" queda sin acción por ahora (prototipo)
 });
