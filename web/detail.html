@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detalle — CineEnCasa</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="css/material-tokens.css">
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__inner">
+      <a href="calendar.html?logged=1" class="brand">
+        <img src="assets/d3d3d.svg" alt="" class="brand-icon"/>
+        <span class="brand-title">CineEnCasa</span>
+      </a>
+      <div class="header-actions">
+        <span class="material-symbols-outlined header-icon" aria-hidden="true">notifications</span>
+        <a href="#" id="logoutBtn" title="Cerrar sesión">
+          <span class="material-symbols-outlined header-icon" aria-label="Cerrar sesión">account_circle</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="detail-page">
+    <div class="detail-panel">
+      <div class="detail-media">
+        <img src="assets/f0fca.svg" alt="Imagen genérica de película">
+      </div>
+      <div class="detail-content">
+        <a class="back" href="calendar.html?logged=1">&lt; Volver al calendario</a>
+        <h1>Toy Story 5</h1>
+        <p class="meta">Acción · 2026 · 1 h 42 m</p>
+        <div class="chip">En cines desde el 18 de Junio</div>
+        <p class="synopsis">En Toy Story 5, Woody, Buzz Lightyear, Jessie y el resto de la pandilla se enfrentan a un nuevo reto.</p>
+        <p class="alarm-label">Tu alarma</p>
+        <div class="alarm-card">
+          <p>Estreno en streaming: sáb 19 sep 2026 · Disney +</p>
+          <p>Próxima alarma: en 6 días — 1 semana antes (sáb 12 sep)</p>
+          <p>Avisos: 1 semana · 1 día · 1 hora antes</p>
+        </div>
+        <button id="cancelAlarmBtn" class="btn btn-outline">CANCELAR ALARMA</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/detail.js"></script>
+</body>
+</html>
+

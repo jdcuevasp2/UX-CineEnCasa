@@ -1,0 +1,52 @@
+/* Vista: Detalle de alarma / título (W-05) */
+.detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+.detail-panel {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.detail-media img {
+  width: 274px;
+  height: 452px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.detail-content { max-width: 560px; }
+.detail-content h1 { margin: 8px 0 4px; font-size: var(--type-h2-size); line-height: var(--type-h2-line-height); }
+.back { color: var(--md-sys-color-text-secondary); display: inline-block; margin-bottom: 8px; text-decoration: none; font-size: 13px; }
+.back:hover { color: var(--md-sys-color-on-primary); }
+.meta { color: var(--md-sys-color-text-secondary); margin: 6px 0; }
+.chip {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: var(--md-sys-color-success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 13px;
+}
+.synopsis { color: var(--md-sys-color-on-primary); line-height: 1.5; margin: 16px 0; }
+.alarm-label { color: var(--md-sys-color-on-primary); font-weight: 500; font-size: 14px; margin: 0; }
+.alarm-card {
+  background: var(--md-sys-color-surface-variant);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--md-sys-color-text-secondary);
+  margin: 12px 0;
+  font-size: 13px;
+}
+.alarm-card p { margin: 4px 0; }
+.btn { display: inline-block; border-radius: 12px; padding: 10px 16px; cursor: pointer; font-size: 14px; }
+.btn-outline { background: transparent; border: 1px solid var(--md-sys-color-outline); color: var(--md-sys-color-on-primary); }
+.btn-outline:hover { background: var(--md-sys-color-outline); }
+
+@media (max-width: 700px) {
+  .detail-panel { flex-direction: column; }
+  .detail-media img { width: 100%; height: auto; max-height: 420px; }
+  .detail-content { max-width: 100%; }
+}

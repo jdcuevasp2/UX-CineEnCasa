@@ -70,3 +70,22 @@ img { max-width: 100%; display: block; }
 :root {
   --md-sys-color-success: #10B981; /* Color/Banner verde */
 }
+
+/* Shared top nav (NavDesktop) reused across calendar and detail views */
+.app-header {
+  background: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+.app-header__inner {
+  max-width: 1090px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-icon { width: 39px; height: 37px; }
+.brand-title { font-size: 28px; line-height: 36px; font-weight: 500; color: var(--md-sys-color-on-primary); }
+.header-actions { display: flex; align-items: center; gap: 20px; }
+.header-icon { font-size: 28px; color: var(--md-sys-color-on-primary); cursor: pointer; }
