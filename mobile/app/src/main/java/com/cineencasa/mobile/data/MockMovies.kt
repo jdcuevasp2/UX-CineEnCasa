@@ -9,7 +9,11 @@ object MockMovies {
             title = "Spider-Man: Brand New Day",
             genre = "Acción",
             year = 2026,
-            posterRes = R.drawable.poster_spiderman
+            posterRes = R.drawable.poster_spiderman,
+            durationLabel = "2 h 30 m",
+            releaseDateLabel = "En cines desde el 31 de Julio",
+            description = "Peter Parker vive totalmente solo y olvidado por todos tras los eventos de No Way Home, dedicándose a proteger Nueva York como un héroe callejero a tiempo completo.",
+            heroRes = R.drawable.poster_spiderman
         ),
         Movie(
             id = 2,
