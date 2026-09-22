@@ -14,8 +14,6 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,12 +29,10 @@ import androidx.compose.ui.unit.dp
 import com.cineencasa.mobile.R
 import com.cineencasa.mobile.data.Movie
 import com.cineencasa.mobile.data.MockMovies
+import com.cineencasa.mobile.ui.components.CineEnCasaTextField
 import com.cineencasa.mobile.ui.components.CineEnCasaTopBar
 import com.cineencasa.mobile.ui.components.MovieCard
 import com.cineencasa.mobile.ui.theme.CineEnCasaTheme
-import com.cineencasa.mobile.ui.theme.Outline
-import com.cineencasa.mobile.ui.theme.PlaceholderTertiary
-import com.cineencasa.mobile.ui.theme.Surface as SurfaceColor
 
 /** Figma node 36:23517 — M-03 Cartelera (Home). */
 @Composable
@@ -78,22 +74,11 @@ fun CarteleraScreen(
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            OutlinedTextField(
+            CineEnCasaTextField(
                 value = query,
                 onValueChange = { query = it },
-                label = { Text(stringResource(id = R.string.cartelera_search_label)) },
-                singleLine = true,
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedContainerColor = SurfaceColor,
-                    unfocusedContainerColor = SurfaceColor,
-                    focusedBorderColor = Outline,
-                    unfocusedBorderColor = Outline,
-                    focusedTextColor = Color.White,
-                    unfocusedTextColor = Color.White,
-                    focusedLabelColor = PlaceholderTertiary,
-                    unfocusedLabelColor = PlaceholderTertiary,
-                    cursorColor = MaterialTheme.colorScheme.primary
-                ),
+                label = stringResource(id = R.string.cartelera_search_label),
+                placeholder = "",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)

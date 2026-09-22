@@ -14,8 +14,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -35,12 +33,11 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cineencasa.mobile.R
+import com.cineencasa.mobile.ui.components.CineEnCasaTextField
 import com.cineencasa.mobile.ui.components.PrimaryButton
 import com.cineencasa.mobile.ui.theme.Azul2Secondary
 import com.cineencasa.mobile.ui.theme.CineEnCasaTheme
-import com.cineencasa.mobile.ui.theme.Outline
 import com.cineencasa.mobile.ui.theme.PlaceholderTertiary
-import com.cineencasa.mobile.ui.theme.Surface as SurfaceColor
 
 /** Figma node 28:22956 — M-01 Login / Registro. */
 @Composable
@@ -81,28 +78,24 @@ fun LoginScreen(
                 )
             }
 
-            OutlinedTextField(
+            CineEnCasaTextField(
                 value = email,
                 onValueChange = { email = it },
-                label = { Text(stringResource(id = R.string.login_email_label)) },
-                placeholder = { Text(stringResource(id = R.string.login_email_placeholder)) },
-                singleLine = true,
+                label = stringResource(id = R.string.login_email_label),
+                placeholder = stringResource(id = R.string.login_email_placeholder),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                colors = cineEnCasaTextFieldColors(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 16.dp)
             )
 
-            OutlinedTextField(
+            CineEnCasaTextField(
                 value = password,
                 onValueChange = { password = it },
-                label = { Text(stringResource(id = R.string.login_password_label)) },
-                placeholder = { Text(stringResource(id = R.string.login_password_placeholder)) },
-                singleLine = true,
+                label = stringResource(id = R.string.login_password_label),
+                placeholder = stringResource(id = R.string.login_password_placeholder),
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                colors = cineEnCasaTextFieldColors(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 24.dp)
@@ -152,21 +145,6 @@ private fun LogoBadge() {
         )
     }
 }
-
-@Composable
-private fun cineEnCasaTextFieldColors() = OutlinedTextFieldDefaults.colors(
-    focusedContainerColor = SurfaceColor,
-    unfocusedContainerColor = SurfaceColor,
-    focusedBorderColor = Outline,
-    unfocusedBorderColor = Outline,
-    focusedTextColor = Color.White,
-    unfocusedTextColor = Color.White,
-    focusedLabelColor = PlaceholderTertiary,
-    unfocusedLabelColor = PlaceholderTertiary,
-    focusedPlaceholderColor = PlaceholderTertiary,
-    unfocusedPlaceholderColor = PlaceholderTertiary,
-    cursorColor = MaterialTheme.colorScheme.primary
-)
 
 @Preview(showBackground = true, backgroundColor = 0xFF0F131C, widthDp = 393, heightDp = 852)
 @Composable

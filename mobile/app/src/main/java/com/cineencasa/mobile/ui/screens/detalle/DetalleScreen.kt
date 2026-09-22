@@ -35,6 +35,7 @@ import com.cineencasa.mobile.data.Movie
 import com.cineencasa.mobile.data.MockMovies
 import com.cineencasa.mobile.ui.components.CineEnCasaTopBar
 import com.cineencasa.mobile.ui.components.PrimaryButton
+import com.cineencasa.mobile.ui.theme.Azul2Secondary
 import com.cineencasa.mobile.ui.theme.CineEnCasaTheme
 import com.cineencasa.mobile.ui.theme.Outline
 import com.cineencasa.mobile.ui.theme.PlaceholderTertiary
@@ -113,7 +114,7 @@ fun DetalleScreen(
                             modifier = Modifier
                                 .size(8.dp)
                                 .clip(CircleShape)
-                                .background(PlaceholderTertiary)
+                                .background(Azul2Secondary)
                         )
                         Text(
                             text = movie.releaseDateLabel,
