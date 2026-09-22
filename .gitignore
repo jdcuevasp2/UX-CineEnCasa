@@ -1,0 +1,16 @@
+# Local, untracked Claude Code project memory — never commit.
+CLAUDE.md
+
+# Android / Gradle (mobile/)
+mobile/local.properties
+mobile/.gradle/
+mobile/**/build/
+mobile/captures/
+mobile/.cxx/
+mobile/*.iml
+mobile/.idea/
+mobile/app/release/
+mobile/app/debug/
+
+# macOS
+.DS_Store
