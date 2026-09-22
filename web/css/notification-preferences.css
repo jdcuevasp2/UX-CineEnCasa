@@ -1,0 +1,78 @@
+/* Vista: Preferencias de notificación (W-08) */
+.prefs-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+.prefs-page h1 {
+  margin: 0 0 8px;
+  font-size: var(--type-h2-size);
+  line-height: var(--type-h2-line-height);
+  font-weight: 500;
+}
+.prefs-subtitle {
+  color: var(--md-sys-color-text-secondary);
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.pref-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+}
+.pref-label { font-size: 16px; color: var(--md-sys-color-on-primary); }
+.divider { border: none; border-top: 1px solid var(--md-sys-color-outline); margin: 0; }
+
+/* Toggle switch (M3-style) */
+.switch { position: relative; display: inline-block; width: 52px; height: 32px; cursor: pointer; flex-shrink: 0; }
+.switch input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.switch-track {
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-outline);
+  border-radius: 100px;
+  transition: background 0.15s ease;
+  display: block;
+}
+.switch-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+.switch input:checked + .switch-track { background: var(--md-sys-color-primary-variant); }
+.switch input:checked + .switch-track .switch-thumb { transform: translateX(20px); }
+.switch input:focus-visible + .switch-track { outline: 2px solid var(--md-sys-color-primary); outline-offset: 2px; }
+
+.prefs-note {
+  color: var(--md-sys-color-placeholder);
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+#saveBtn.btn-primary {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+}
+#saveBtn.btn-primary:hover { opacity: 0.92; }
+
+.prefs-saved {
+  color: var(--md-sys-color-success);
+  font-size: 13px;
+  margin: 8px 0 0;
+}
