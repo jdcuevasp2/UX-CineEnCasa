@@ -44,6 +44,8 @@ Ejemplo de datos para probar:
 - `index.html` — Login.
 - `calendar.html` — Calendario de estrenos/alarmas (requiere sesión).
 - `detail.html` — Detalle de alarma/título (requiere sesión).
+- `cancel-alarm.html` — Modal de confirmación para cancelar una alarma (requiere sesión).
+- `profile.html` — Perfil / gestión de cuenta (requiere sesión).
 - `css/` — Estilos, incluyendo `material-tokens.css` con los tokens Material 3 compartidos.
 - `js/` — Lógica de cada vista (sesión, render de calendario, interacciones).
 - `data/events.json` — Eventos mostrados en el calendario.
