@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CineEnCasa — Login</title>
+  <link rel="stylesheet" href="css/material-tokens.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <main class="login-main">
+    <div class="login-card">
+      <img src="assets/d3d3d.svg" class="login-icon" alt="CineEnCasa">
+      <h1 class="login-title">CineEnCasa</h1>
+      <p class="login-subtitle">El cine, cuando llega a casa.</p>
+      <form id="loginForm" novalidate>
+        <div class="field md3-field">
+          <input id="email" class="md3-input" name="email" type="email" placeholder="Ingresa tu correo" autocomplete="email" required />
+          <span class="md3-label">Correo electrónico</span>
+          <span class="md3-error" id="emailError" aria-live="polite">Ingresa un correo</span>
+        </div>
+        <div class="field md3-field">
+          <input id="password" class="md3-input" name="password" type="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" required />
+          <span class="md3-label">Contraseña</span>
+          <span class="md3-error" id="passwordError" aria-live="polite">Ingresa una contraseña</span>
+        </div>
+        <button class="btn btn-primary" type="submit">INGRESAR</button>
+      </form>
+      <div class="links">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="#">¿Primera vez? Crear cuenta</a>
+      </div>
+    </div>
+  </main>
+  <script src="js/index.js"></script>
+</body>
+</html>
+

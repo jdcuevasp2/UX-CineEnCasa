@@ -1,0 +1,62 @@
+/* Vista: Login (W-01) */
+.login-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: min(800px, 90vw);
+  text-align: center;
+}
+
+.login-icon { width: 80px; height: 80px; margin: 0 auto 16px; }
+.login-title { margin: 0 0 4px; font-size: var(--type-h2-size); line-height: var(--type-h2-line-height); font-weight: 500; }
+.login-subtitle { color: var(--md-sys-color-text-secondary); margin: 0 0 24px; font-size: var(--type-body-size); }
+
+.field { display: block; text-align: left; margin-bottom: 20px; }
+
+/* Material 3 outlined text field with a floating label notched into the border */
+.md3-field { position: relative; }
+.md3-input {
+  width: 100%;
+  background: var(--md-sys-color-surface-variant);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 4px;
+  color: var(--md-sys-color-on-primary);
+  font-size: 16px;
+  line-height: 24px;
+  padding: 16px;
+}
+.md3-input::placeholder { color: var(--md-sys-color-text-secondary); }
+.md3-input:focus { outline: none; border-color: var(--md-sys-color-primary); }
+.md3-label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: var(--md-sys-color-surface-variant);
+  padding: 0 4px;
+  color: var(--md-sys-color-placeholder);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.md3-error {
+  display: none;
+  color: #f87171;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+  text-align: left;
+}
+.md3-field--error .md3-input { border-color: #f87171; }
+.md3-field--error .md3-error { display: block; }
+
+.btn { display: inline-block; font-size: 14px; font-weight: 500; border-radius: 12px; padding: 12px 20px; cursor: pointer; }
+.btn-primary { width: 100%; margin-top: 8px; }
+
+.links { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.links a { color: var(--md-sys-color-placeholder); text-decoration: underline; font-size: var(--type-link-size); }

@@ -1,0 +1,72 @@
+/* Material 3 tokens (preliminar) — generado desde Figma design_context (W-01 Login)
+   Actualizar tras extraer más frames. */
+:root {
+  /* Colors */
+  --md-sys-color-primary: #6366F1; /* Color/Azul2 */
+  --md-sys-color-primary-variant: #4F46E5; /* Color/Azul1 */
+  --md-sys-color-on-primary: #FFFFFF; /* Color/Texto primario */
+  --md-sys-color-surface: #0F131C; /* Grid/Web-1440 */
+  --md-sys-color-on-surface: #1D1B20; /* M3/sys/light/on-surface */
+  --md-sys-color-surface-variant: #181C24; /* Color/Tarjeta película */
+  --md-sys-color-outline: #2A3142; /* Color/Bordes delimitadores */
+  --md-sys-color-placeholder: #64748B; /* Color/Place holder */
+  --md-sys-color-text-secondary: #94A3B8; /* Color/Texto secundario */
+
+  /* Typography (base mappings) */
+  --font-family-base: 'Roboto', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial;
+  --type-h2-size: 28px;
+  --type-h2-line-height: 36px;
+  --type-body-size: 14px;
+  --type-body-line-height: 20px;
+  --type-link-size: 16px;
+
+  /* Spacing & shapes */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+}
+
+/* Base reset + typography applied to every view (no extra class needed) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+  color: var(--md-sys-color-on-primary);
+  background: var(--md-sys-color-surface);
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* Material Symbols icon font (used instead of downloading stock Material SVGs) */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Utility classes shared across views, built on tokens */
+.btn-primary {
+  background: var(--md-sys-color-primary-variant);
+  color: var(--md-sys-color-on-primary);
+  border-radius: 12px;
+  padding: 12px 24px;
+  border: none;
+}
+
+.input {
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-primary);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Additional tokens discovered in other frames */
+:root {
+  --md-sys-color-success: #10B981; /* Color/Banner verde */
+}
