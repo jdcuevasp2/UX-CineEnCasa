@@ -90,9 +90,14 @@ document.addEventListener('DOMContentLoaded', function(){
           const events = sampleEvents.filter(ev => ev.date === iso);
           if(events.length){
             const isAlarm = events.some(ev => /alarma/i.test(ev.title));
-            const chip = document.createElement('div');
+            const chip = document.createElement('button');
+            chip.type = 'button';
             chip.className = 'event-chip';
             chip.textContent = isAlarm ? 'Alarma' : 'Aviso';
+            chip.addEventListener('click', function(e){
+              e.stopPropagation();
+              window.location.href = 'detail.html?logged=1';
+            });
             dayCell.appendChild(chip);
             dayCell.title = events.map(e=>e.title).join('\n');
           }
