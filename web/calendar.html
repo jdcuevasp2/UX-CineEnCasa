@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendario — CineEnCasa</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="css/material-tokens.css">
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__inner">
+      <a href="home.html" class="brand">
+        <img src="assets/d3d3d.svg" alt="" class="brand-icon"/>
+        <span class="brand-title">CineEnCasa</span>
+      </a>
+      <div class="header-actions">
+        <span class="material-symbols-outlined header-icon" aria-hidden="true">notifications</span>
+        <a href="#" id="logoutBtn" title="Cerrar sesión">
+          <span class="material-symbols-outlined header-icon" aria-label="Cerrar sesión">account_circle</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="calendar-page">
+    <div class="seg-control" role="tablist" aria-label="Vista de calendario">
+      <button type="button" class="seg-btn seg-btn--start is-selected" role="tab" aria-selected="true">
+        <span class="material-symbols-outlined seg-icon" aria-hidden="true">check</span>
+        Mes
+      </button>
+      <button type="button" class="seg-btn" role="tab" aria-selected="false">Semana</button>
+      <button type="button" class="seg-btn" role="tab" aria-selected="false">Día</button>
+      <button type="button" class="seg-btn seg-btn--end" role="tab" aria-selected="false">Año</button>
+    </div>
+
+    <div class="calendar-card">
+      <div class="calendar-header">
+        <div id="monthLabel" class="calendar-month">Mes Año</div>
+        <div class="calendar-nav">
+          <button id="prevMonth" class="nav-arrow" aria-label="Mes anterior">‹</button>
+          <button id="nextMonth" class="nav-arrow" aria-label="Mes siguiente">›</button>
+        </div>
+      </div>
+      <div id="calendarRoot" class="calendar-root"></div>
+    </div>
+  </main>
+
+  <script id="events-json" type="application/json">
+  {
+    "events": [
+      { "date": "2026-09-23", "title": "Estreno local" },
+      { "date": "2026-09-27", "title": "Alarma: trailer" },
+      { "date": "2026-09-30", "title": "Re-estreno" }
+    ]
+  }
+  </script>
+  <script src="js/calendar.js"></script>
+</body>
+</html>
+
+
