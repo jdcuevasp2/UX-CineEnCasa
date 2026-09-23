@@ -21,13 +21,22 @@
 .back:hover { color: var(--md-sys-color-on-primary); }
 .meta { color: var(--md-sys-color-text-secondary); margin: 6px 0; }
 .chip {
-  display: inline-block;
-  background: rgba(16, 185, 129, 0.12);
-  border-radius: 8px;
-  padding: 6px 10px;
-  color: var(--md-sys-color-success);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--md-sys-color-surface-variant);
+  border-radius: 12px;
+  padding: 6px 8px;
+  color: var(--md-sys-color-text-secondary);
+  border: 1px solid var(--md-sys-color-outline);
   font-size: 13px;
+}
+.chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--md-sys-color-primary);
+  flex-shrink: 0;
 }
 .synopsis { color: var(--md-sys-color-on-primary); line-height: 1.5; margin: 16px 0; }
 .alarm-label { color: var(--md-sys-color-on-primary); font-weight: 500; font-size: 14px; margin: 0; }
@@ -41,7 +50,7 @@
   font-size: 13px;
 }
 .alarm-card p { margin: 4px 0; }
-.btn { display: inline-block; border-radius: 12px; padding: 10px 16px; cursor: pointer; font-size: 14px; }
+.btn { display: inline-block; border-radius: 12px; padding: 10px 16px; cursor: pointer; font-size: 14px; text-decoration: none; }
 .btn-outline { background: transparent; border: 1px solid var(--md-sys-color-outline); color: var(--md-sys-color-on-primary); }
 .btn-outline:hover { background: var(--md-sys-color-outline); }
 

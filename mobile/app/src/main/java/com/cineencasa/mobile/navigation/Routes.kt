@@ -4,6 +4,7 @@ package com.cineencasa.mobile.navigation
 sealed class Routes(val route: String) {
     data object Login : Routes("login")
     data object Cartelera : Routes("cartelera")
+    data object MisAlarmas : Routes("mis-alarmas")
     data object Detalle : Routes("detalle/{movieId}") {
         const val ARG_MOVIE_ID = "movieId"
         fun createRoute(movieId: Int) = "detalle/$movieId"
