@@ -13,14 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    const emailValid = email.value.trim().length > 0;
-    const passwordValid = password.value.trim().length > 0;
-    setFieldError(email, !emailValid);
-    setFieldError(password, !passwordValid);
-    if(!emailValid || !passwordValid){
-      (emailValid ? password : email).focus();
-      return;
-    }
+    setFieldError(email, false);
+    setFieldError(password, false);
     try{ localStorage.setItem('cine_logged', '1'); }
     catch(err){ console.warn('No se pudo guardar la sesión en localStorage', err); }
     // ?logged=1 viaja en la URL: Firefox aisla localStorage por archivo bajo file://
