@@ -7,12 +7,5 @@ document.addEventListener('DOMContentLoaded', function(){
   }catch(err){ console.warn('No se pudo leer la sesión de localStorage', err); }
   if(!hasSession){
     window.location.href = 'index.html';
-    return;
   }
-
-  // Prototipo/demo: simula que el calendario termina de cargar y ya trae
-  // los estrenos seguidos, pasando automáticamente a calendar.html.
-  window.setTimeout(function(){
-    window.location.href = 'calendar.html?logged=1';
-  }, 3000);
 });

@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const yesBtn = document.getElementById('yesBtn');
   yesBtn.addEventListener('click', function(){
     // Prototipo/demo: al confirmar, esta era la única alarma seguida,
-    // así que el calendario queda vacío (calendar-empty.js pasa a
-    // calendar.html automáticamente a los pocos segundos).
+    // así que el calendario queda vacío.
     window.location.href = 'calendar-empty.html?logged=1';
   });
 });
