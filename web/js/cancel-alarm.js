@@ -22,5 +22,12 @@ document.addEventListener('DOMContentLoaded', function(){
   noBtn.addEventListener('click', function(){
     window.location.href = 'calendar.html?logged=1';
   });
-  // "SÍ, CANCELAR" queda sin acción por ahora (prototipo)
+
+  const yesBtn = document.getElementById('yesBtn');
+  yesBtn.addEventListener('click', function(){
+    // Prototipo/demo: al confirmar, esta era la única alarma seguida,
+    // así que el calendario queda vacío (calendar-empty.js pasa a
+    // calendar.html automáticamente a los pocos segundos).
+    window.location.href = 'calendar-empty.html?logged=1';
+  });
 });
