@@ -10,14 +10,6 @@ document.addEventListener('DOMContentLoaded', function(){
     return;
   }
 
-  const logoutBtn = document.getElementById('logoutBtn');
-  logoutBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    try{ localStorage.removeItem('cine_logged'); }
-    catch(err){ console.warn('No se pudo borrar la sesión de localStorage', err); }
-    window.location.href = 'index.html';
-  });
-
   // Botones "Semana/Día/Año" son solo visuales en este prototipo; "Mes" es la única vista implementada
   document.querySelectorAll('.seg-btn').forEach(function(btn){
     btn.addEventListener('click', function(){

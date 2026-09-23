@@ -32,7 +32,7 @@ npx serve .
 
 ## Inicio de sesión (prototipo)
 
-La pantalla de login (`index.html`) acepta **cualquier correo y contraseña no vacíos** — es un prototipo y no valida credenciales reales contra un backend.
+La pantalla de login (`index.html`) acepta **cualquier valor, incluso vacío** — es un prototipo, no valida credenciales reales contra un backend.
 
 Ejemplo de datos para probar:
 
@@ -50,5 +50,6 @@ Ejemplo de datos para probar:
 - `calendar-empty.html` — Estado vacío del calendario, cuando no se sigue ninguna película (requiere sesión).
 - `css/` — Estilos, incluyendo `material-tokens.css` con los tokens Material 3 compartidos.
 - `js/` — Lógica de cada vista (sesión, render de calendario, interacciones).
+  - `js/app-header.js` — define `<app-header>`, el header compartido (marca, notificaciones, perfil) que usan todas las vistas autenticadas en vez de repetir el markup en cada HTML.
 - `data/events.json` — Eventos mostrados en el calendario.
 - `assets/` — Imágenes/SVG exportados desde Figma.

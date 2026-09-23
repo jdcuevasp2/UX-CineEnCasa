@@ -73,6 +73,7 @@ img { max-width: 100%; display: block; }
 
 /* Shared top nav (NavDesktop) reused across calendar and detail views */
 .app-header {
+  display: block;
   background: var(--md-sys-color-surface);
   border-bottom: 1px solid var(--md-sys-color-outline);
 }
