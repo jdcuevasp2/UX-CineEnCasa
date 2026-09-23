@@ -4,27 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Preferencias de aviso — CineEnCasa</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block">
   <link rel="stylesheet" href="css/material-tokens.css">
   <link rel="stylesheet" href="css/notification-preferences.css">
+  <script src="js/app-header.js"></script>
 </head>
 <body>
-  <header class="app-header">
-    <div class="app-header__inner">
-      <a href="calendar.html?logged=1" class="brand">
-        <img src="assets/d3d3d.svg" alt="" class="brand-icon"/>
-        <span class="brand-title">CineEnCasa</span>
-      </a>
-      <div class="header-actions">
-        <a href="notification-preferences.html?logged=1" title="Preferencias de notificación">
-          <span class="material-symbols-outlined header-icon" aria-label="Preferencias de notificación">notifications</span>
-        </a>
-        <a href="profile.html?logged=1" title="Perfil">
-          <span class="material-symbols-outlined header-icon" aria-label="Perfil">account_circle</span>
-        </a>
-      </div>
-    </div>
-  </header>
+  <app-header class="app-header"></app-header>
   <main class="prefs-page">
     <h1>Preferencias de aviso</h1>
     <p class="prefs-subtitle">Elige qué avisos quieres recibir para cada estreno que sigues</p>
