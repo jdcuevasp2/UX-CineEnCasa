@@ -9,6 +9,10 @@ sealed class Routes(val route: String) {
         const val ARG_MOVIE_ID = "movieId"
         fun createRoute(movieId: Int) = "detalle/$movieId"
     }
+    data object DetalleConAlarma : Routes("detalle-alarma/{alarmaId}") {
+        const val ARG_ALARMA_ID = "alarmaId"
+        fun createRoute(alarmaId: Int) = "detalle-alarma/$alarmaId"
+    }
     data object Confirmacion : Routes("confirmacion/{movieId}") {
         const val ARG_MOVIE_ID = "movieId"
         fun createRoute(movieId: Int) = "confirmacion/$movieId"

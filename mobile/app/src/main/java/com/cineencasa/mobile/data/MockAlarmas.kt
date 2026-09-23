@@ -8,7 +8,10 @@ object MockAlarmas {
             id = 1,
             movieTitle = "Spider-Man: Brand New Day",
             nextAlarmLabel = "Próxima alarma: en 6 días (1 semana antes)",
-            posterRes = R.drawable.poster_spiderman
+            posterRes = R.drawable.poster_spiderman,
+            movieId = 1,
+            proximaAlarmaDetalle = "Próxima alarma: en 6 días — 1 semana antes (sáb 12 sep)",
+            estrenoDetalle = "Estreno: sáb 19 sep · Netflix"
         ),
         Alarma(
             id = 2,
