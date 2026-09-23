@@ -13,6 +13,7 @@ import com.cineencasa.mobile.ui.screens.confirmacion.ConfirmacionScreen
 import com.cineencasa.mobile.ui.screens.detalle.DetalleScreen
 import com.cineencasa.mobile.ui.screens.login.LoginScreen
 import com.cineencasa.mobile.data.MockAlarmas
+import com.cineencasa.mobile.ui.screens.detalle.DetalleConAlarmaScreen
 import com.cineencasa.mobile.ui.screens.misalarmas.MisAlarmasScreen
 
 @Composable
@@ -41,8 +42,30 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
         composable(Routes.MisAlarmas.route) {
             MisAlarmasScreen(
                 alarmas = MockAlarmas.list,
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onAlarmaClick = { alarma ->
+                    // Por ahora solo Spider-Man tiene datos completos de M-05
+                    if (alarma.movieId != null) {
+                        navController.navigate(Routes.DetalleConAlarma.createRoute(alarma.id))
+                    }
+                }
             )
+        }
+        composable(
+            route = Routes.DetalleConAlarma.route,
+            arguments = listOf(navArgument(Routes.DetalleConAlarma.ARG_ALARMA_ID) { type = NavType.IntType })
+        ) { backStackEntry ->
+            val alarmaId = backStackEntry.arguments?.getInt(Routes.DetalleConAlarma.ARG_ALARMA_ID)
+            val alarma = MockAlarmas.list.find { it.id == alarmaId }
+            val movie = alarma?.movieId?.let { MockMovies.findById(it) }
+            if (alarma != null && movie != null) {
+                DetalleConAlarmaScreen(
+                    movie = movie,
+                    alarma = alarma,
+                    onBackClick = { navController.popBackStack() },
+                    onCancelarAlarmaClick = { /* Cancelar alarma: fuera de alcance en esta fase */ }
+                )
+            }
         }
         composable(
             route = Routes.Detalle.route,

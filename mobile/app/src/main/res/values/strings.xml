@@ -27,6 +27,8 @@
     <string name="detalle_create_alarm">CREAR ALARMA</string>
     <string name="detalle_alarm_note">Te avisaremos 1 semana, 1 día y 1 hora antes de su estreno en streaming.</string>
     <string name="content_description_back">Volver</string>
+    <string name="detalle_alarma_activa">Alarma activa</string>
+    <string name="detalle_cancelar_alarma">CANCELAR ALARMA</string>
 
     <!-- M-06 Confirmación de alarma -->
     <string name="confirmacion_title">Alarma creada</string>

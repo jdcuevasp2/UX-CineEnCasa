@@ -1,6 +1,7 @@
 package com.cineencasa.mobile.ui.screens.misalarmas
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,6 +41,7 @@ import com.cineencasa.mobile.ui.theme.Outline
 fun MisAlarmasScreen(
     alarmas: List<Alarma>,
     onBackClick: () -> Unit,
+    onAlarmaClick: (Alarma) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -57,7 +59,7 @@ fun MisAlarmasScreen(
     ) { innerPadding ->
         LazyColumn(modifier = Modifier.padding(innerPadding)) {
             items(alarmas) { alarma ->
-                AlarmaRow(alarma = alarma)
+                AlarmaRow(alarma = alarma, onClick = { onAlarmaClick(alarma) })
                 HorizontalDivider(color = Outline)
             }
         }
@@ -65,10 +67,11 @@ fun MisAlarmasScreen(
 }
 
 @Composable
-private fun AlarmaRow(alarma: Alarma, modifier: Modifier = Modifier) {
+private fun AlarmaRow(alarma: Alarma, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .fillMaxWidth()
+            .clickable(onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -110,6 +113,6 @@ private fun AlarmaRow(alarma: Alarma, modifier: Modifier = Modifier) {
 @Composable
 private fun MisAlarmasScreenPreview() {
     CineEnCasaTheme {
-        MisAlarmasScreen(alarmas = MockAlarmas.list, onBackClick = {})
+        MisAlarmasScreen(alarmas = MockAlarmas.list, onBackClick = {}, onAlarmaClick = {})
     }
 }
