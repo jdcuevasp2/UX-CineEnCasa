@@ -21,6 +21,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,6 +38,7 @@ import com.cineencasa.mobile.ui.components.CineEnCasaTextField
 import com.cineencasa.mobile.ui.components.CineEnCasaTopBar
 import com.cineencasa.mobile.ui.components.MovieCard
 import com.cineencasa.mobile.ui.theme.CineEnCasaTheme
+import kotlinx.coroutines.delay
 
 /** Figma node 36:23517 — M-03 Cartelera (Home). */
 @Composable
@@ -44,9 +46,18 @@ fun CarteleraScreen(
     movies: List<Movie>,
     onMovieClick: (Movie) -> Unit,
     onMisAlarmasClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    pendingNotificationAlarmaId: Int? = null,
+    onNotificationReady: (Int) -> Unit = {}
 ) {
     var query by remember { mutableStateOf("") }
+
+    LaunchedEffect(pendingNotificationAlarmaId) {
+        if (pendingNotificationAlarmaId != null) {
+            delay(3000)
+            onNotificationReady(pendingNotificationAlarmaId)
+        }
+    }
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
