@@ -12,6 +12,8 @@ import com.cineencasa.mobile.ui.screens.cartelera.CarteleraScreen
 import com.cineencasa.mobile.ui.screens.confirmacion.ConfirmacionScreen
 import com.cineencasa.mobile.ui.screens.detalle.DetalleScreen
 import com.cineencasa.mobile.ui.screens.login.LoginScreen
+import com.cineencasa.mobile.data.MockAlarmas
+import com.cineencasa.mobile.ui.screens.misalarmas.MisAlarmasScreen
 
 @Composable
 fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()) {
@@ -30,7 +32,16 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
                 movies = MockMovies.list,
                 onMovieClick = { movie ->
                     navController.navigate(Routes.Detalle.createRoute(movie.id))
+                },
+                onMisAlarmasClick = {
+                    navController.navigate(Routes.MisAlarmas.route)
                 }
+            )
+        }
+        composable(Routes.MisAlarmas.route) {
+            MisAlarmasScreen(
+                alarmas = MockAlarmas.list,
+                onBackClick = { navController.popBackStack() }
             )
         }
         composable(

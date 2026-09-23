@@ -18,6 +18,9 @@
     <string name="cartelera_search_label">Buscar</string>
     <string name="content_description_account">Cuenta</string>
 
+    <!-- M-09 Mis alarmas -->
+    <string name="mis_alarmas_title">Mis alarmas</string>
+
     <!-- M-04 Detalle -->
     <string name="detalle_title">Detalle</string>
     <string name="detalle_meta_format">%1$s · %2$d · %3$s</string>

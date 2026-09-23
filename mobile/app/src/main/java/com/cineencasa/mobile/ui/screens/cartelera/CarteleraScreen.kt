@@ -43,6 +43,7 @@ import com.cineencasa.mobile.ui.theme.CineEnCasaTheme
 fun CarteleraScreen(
     movies: List<Movie>,
     onMovieClick: (Movie) -> Unit,
+    onMisAlarmasClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     var query by remember { mutableStateOf("") }
@@ -54,7 +55,7 @@ fun CarteleraScreen(
             CineEnCasaTopBar(
                 title = stringResource(id = R.string.cartelera_title),
                 trailingIcon = {
-                    IconButton(onClick = { /* Perfil: fuera de alcance en esta fase */ }) {
+                    IconButton(onClick = onMisAlarmasClick) {
                         Icon(
                             imageVector = Icons.Filled.AccountCircle,
                             contentDescription = stringResource(id = R.string.content_description_account),
@@ -122,6 +123,6 @@ fun CarteleraScreen(
 @Composable
 private fun CarteleraScreenPreview() {
     CineEnCasaTheme {
-        CarteleraScreen(movies = MockMovies.list, onMovieClick = {})
+        CarteleraScreen(movies = MockMovies.list, onMovieClick = {}, onMisAlarmasClick = {})
     }
 }
