@@ -11,7 +11,9 @@ object MockAlarmas {
             posterRes = R.drawable.poster_spiderman,
             movieId = 1,
             proximaAlarmaDetalle = "Próxima alarma: en 6 días — 1 semana antes (sáb 12 sep)",
-            estrenoDetalle = "Estreno: sáb 19 sep · Netflix"
+            estrenoDetalle = "Estreno: sáb 19 sep · Netflix",
+            cancelConfirmBody = "Llega a streaming mañana (sáb 19 sep, en Netflix).",
+            streamingService = "Netflix"
         ),
         Alarma(
             id = 2,

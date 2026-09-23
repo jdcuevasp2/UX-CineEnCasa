@@ -15,6 +15,8 @@ import com.cineencasa.mobile.ui.screens.login.LoginScreen
 import com.cineencasa.mobile.data.MockAlarmas
 import com.cineencasa.mobile.ui.screens.detalle.DetalleConAlarmaScreen
 import com.cineencasa.mobile.ui.screens.misalarmas.MisAlarmasScreen
+import com.cineencasa.mobile.ui.screens.notificaciones.CancelarAlarmaScreen
+import com.cineencasa.mobile.ui.screens.notificaciones.NotificacionDisponibleScreen
 
 @Composable
 fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()) {
@@ -22,13 +24,24 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
         composable(Routes.Login.route) {
             LoginScreen(
                 onIngresarClick = {
-                    navController.navigate(Routes.Cartelera.route) {
+                    navController.navigate(Routes.Cartelera.createRoute()) {
                         popUpTo(Routes.Login.route) { inclusive = true }
                     }
                 }
             )
         }
-        composable(Routes.Cartelera.route) {
+        composable(
+            route = Routes.Cartelera.route,
+            arguments = listOf(
+                navArgument(Routes.Cartelera.ARG_ALARMA_ID) {
+                    type = NavType.IntType
+                    defaultValue = -1
+                }
+            )
+        ) { backStackEntry ->
+            val triggerAlarmaId = backStackEntry.arguments
+                ?.getInt(Routes.Cartelera.ARG_ALARMA_ID)
+                ?.takeIf { it != -1 }
             CarteleraScreen(
                 movies = MockMovies.list,
                 onMovieClick = { movie ->
@@ -36,6 +49,10 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
                 },
                 onMisAlarmasClick = {
                     navController.navigate(Routes.MisAlarmas.route)
+                },
+                pendingNotificationAlarmaId = triggerAlarmaId,
+                onNotificationReady = { alarmaId ->
+                    navController.navigate(Routes.NotificacionDisponible.createRoute(alarmaId))
                 }
             )
         }
@@ -63,7 +80,43 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
                     movie = movie,
                     alarma = alarma,
                     onBackClick = { navController.popBackStack() },
-                    onCancelarAlarmaClick = { /* Cancelar alarma: fuera de alcance en esta fase */ }
+                    onCancelarAlarmaClick = {
+                        navController.navigate(Routes.CancelarAlarma.createRoute(alarma.id))
+                    }
+                )
+            }
+        }
+        composable(
+            route = Routes.CancelarAlarma.route,
+            arguments = listOf(navArgument(Routes.CancelarAlarma.ARG_ALARMA_ID) { type = NavType.IntType })
+        ) { backStackEntry ->
+            val alarmaId = backStackEntry.arguments?.getInt(Routes.CancelarAlarma.ARG_ALARMA_ID)
+            val alarma = MockAlarmas.list.find { it.id == alarmaId }
+            if (alarma != null) {
+                val goToCartelera: () -> Unit = {
+                    navController.navigate(Routes.Cartelera.createRoute(alarma.id)) {
+                        popUpTo(Routes.Cartelera.route) { inclusive = false }
+                        launchSingleTop = true
+                    }
+                }
+                CancelarAlarmaScreen(
+                    movieTitle = alarma.movieTitle,
+                    releaseInfo = alarma.cancelConfirmBody,
+                    onSiClick = goToCartelera,
+                    onNoClick = goToCartelera
+                )
+            }
+        }
+        composable(
+            route = Routes.NotificacionDisponible.route,
+            arguments = listOf(navArgument(Routes.NotificacionDisponible.ARG_ALARMA_ID) { type = NavType.IntType })
+        ) { backStackEntry ->
+            val alarmaId = backStackEntry.arguments?.getInt(Routes.NotificacionDisponible.ARG_ALARMA_ID)
+            val alarma = MockAlarmas.list.find { it.id == alarmaId }
+            if (alarma != null) {
+                NotificacionDisponibleScreen(
+                    movieTitle = alarma.movieTitle,
+                    streamingService = alarma.streamingService
                 )
             }
         }
@@ -93,7 +146,7 @@ fun CineEnCasaNavHost(navController: NavHostController = rememberNavController()
                 ConfirmacionScreen(
                     movieTitle = movie.title,
                     onVolverClick = {
-                        navController.navigate(Routes.Cartelera.route) {
+                        navController.navigate(Routes.Cartelera.createRoute()) {
                             popUpTo(Routes.Cartelera.route) { inclusive = false }
                             launchSingleTop = true
                         }

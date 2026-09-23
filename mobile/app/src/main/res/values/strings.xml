@@ -35,4 +35,14 @@
     <string name="confirmacion_body">Te avisaremos cuando «%1$s» llegue a streaming.</string>
     <string name="confirmacion_note">Primer aviso: 1 semana antes del estreno.</string>
     <string name="confirmacion_volver">VOLVER A CARTELERA</string>
+
+    <!-- M-12 Notificación — cancelar alarma -->
+    <string name="notificacion_cancelar_title">¿Aún te interesa «%1$s»?</string>
+    <string name="accion_si">SI</string>
+    <string name="accion_no">NO</string>
+
+    <!-- M-13 Notificación — disponible (final) -->
+    <string name="notificacion_disponible_title">¡Ya está disponible!</string>
+    <string name="notificacion_disponible_body">«%1$s» ya se puede ver en %2$s.</string>
+    <string name="accion_ver_ahora">VER AHORA</string>
 </resources>
