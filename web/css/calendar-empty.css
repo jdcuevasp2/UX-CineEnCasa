@@ -1,0 +1,31 @@
+/* Vista: Estado vacío del calendario (W-04) */
+.empty-page {
+  min-height: calc(100vh - 61px); /* resta el alto del header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+.empty-content {
+  max-width: 494px;
+  text-align: center;
+}
+.empty-icon {
+  display: block;
+  font-size: 120px;
+  color: var(--md-sys-color-text-secondary);
+  margin: 0 auto 16px;
+}
+.empty-content h1 {
+  margin: 0 0 16px;
+  font-size: var(--type-h2-size);
+  line-height: var(--type-h2-line-height);
+  font-weight: 500;
+  color: var(--md-sys-color-on-primary);
+}
+.empty-content p {
+  margin: 0;
+  color: var(--md-sys-color-text-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}
