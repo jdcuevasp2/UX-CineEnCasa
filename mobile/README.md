@@ -35,5 +35,3 @@ adb shell am start -n com.cineencasa.mobile/.MainActivity
 | Mis alarmas | M-09 | Lista de películas con alarma activa. |
 | Notificación — ¿aún te interesa? | M-12 | Aviso 1 día antes del estreno; confirma o cancela la alarma. |
 | Notificación — ya disponible | M-13 | Aviso final (1 hora antes) cuando el título ya está disponible en streaming. |
-
-Convenciones del proyecto, catálogo de pantallas y tokens de diseño: ver el `CLAUDE.md` local en la raíz del repo (no versionado).
