@@ -10,15 +10,7 @@ Prototipo web estático (HTML/CSS/JS, sin frameworks ni dependencias) de las pan
 
 ## Cómo abrir el proyecto
 
-### Opción 1 — Abrir `index.html` directamente (más simple)
-
-1. Entra a la carpeta `web/`.
-2. Haz doble clic en `index.html` (o ábrelo desde el navegador con `Archivo > Abrir`).
-3. Inicia sesión y navega normalmente.
-
-> Nota: bajo `file://` el `fetch` a `data/events.json` puede fallar por restricciones del navegador; el calendario ya contempla esto con un JSON de respaldo embebido en `calendar.html`, así que igual funciona sin servidor.
-
-### Opción 2 RECOMENDADA — Servir con un servidor local
+### Opción 1 RECOMENDADA — Servir con un servidor local
 
 Desde la carpeta `web/`, usa cualquiera de estas alternativas y abre la URL que te indique (normalmente `http://localhost:8000` o similar):
 
@@ -29,6 +21,15 @@ python3 -m http.server
 # Con Node (sin instalar nada globalmente)
 npx serve .
 ```
+
+### Opción 2 — Abrir `index.html` directamente (más simple)
+
+1. Entra a la carpeta `web/`.
+2. Haz doble clic en `index.html` (o ábrelo desde el navegador con `Archivo > Abrir`).
+3. Inicia sesión y navega normalmente.
+
+> Nota: bajo `file://` el `fetch` a `data/events.json` puede fallar por restricciones del navegador; el calendario ya contempla esto con un JSON de respaldo embebido en `calendar.html`, así que igual funciona sin servidor.
+
 
 ## Inicio de sesión (prototipo)
 
